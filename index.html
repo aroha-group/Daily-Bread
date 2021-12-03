@@ -8,15 +8,48 @@
     <title>Daily Bread</title>
     <link rel="stylesheet" href="./assets/css/main.css" />
     <link rel="stylesheet" href="./assets/css/mobile.css" />
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link rel="manifest" href="manifest.json"/>
     <link rel="apple-touch-icon" href="logo.png"/>
+    <style>
+        
+        .center {
+        top: 50%;
+        left: 50%;
+        width: 30px;
+        }
+
+        .center:before,
+        .center:after,
+        .center div {
+        background: #000;
+        content: "";
+        display: block;
+        height: 6px;
+        border-radius: 3px;
+        margin: 7px 0;
+        transition: 0.5s;
+        }
+        .center:hover:before {
+        transform: translateY(12px) rotate(135deg);
+        }
+        .center:hover:after {
+        transform: translateY(-12px) rotate(-135deg);
+        }
+        .center:hover div {
+        transform: scale(0);
+        }
+
+    </style>
 </head>
 
 <body>
     <header class="header">
         <div class="icon">
-            <a href="#" onclick="menu()">&#x21C7;</a>
+            <a href="#" onclick="menu()"> 
+                <div class="center">
+                    <div></div>
+                </div>
+            </a>
         </div>
         <div class="nav-brand">
            <img src="./assets/images/logo%20(1).png" />
@@ -30,27 +63,27 @@
         <div class="nav-btn">
             
             
-            <button type="button" class="btn-1" onclick="openForm()">Log in</button>
-            <button type="button" class="btn-2" onclick="openForm2()">Register</button>
+            <button type="button" class="btn-1" onclick="openForm()">LOGIN</button>
+            <button type="button" class="btn-2" onclick="openForm2()">SIGN UP</button>
             
             <div class="form-popup" id="myForm">
                 <form onsubmit="SelectData();event.preventDefault()" class="form-container">
-                    <h1>Login</h1>
+                    <h1>LOGIN</h1>
                     <br />
                      <div class="dropdown">
-                        <label><b>I am Login as</b></label>
+                        <label><b>Login as</b></label>
                         <select name="sign-as" id="join2" class="drop">
                             <option value="volunteer">Volunteer</option>
                             <option value="restaurant">Restaurant</option>
                         </select>
                     </div>
-                    <label for="email"><b>Email</b></label>
-                    <input type="text" placeholder="Enter Email" id="email2" name="email" required>
+                    <!-- <label for="email"><b>Email</b></label> -->
+                    <input type="text" placeholder="Email Address" id="email2" name="email" required>
 
-                    <label for="psw"><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" id="secret2" required>
+                    <!-- <label for="psw"><b>Password</b></label> -->
+                    <input type="password" placeholder="Password" name="psw" id="secret2" required>
 
-                    <button type="submit" class="btn" id="login">Login</button>
+                    <button type="submit" class="btn btn-2" id="login">LOGIN</button>
                     <span id="cross" onclick="closeForm()"><a href="">X</a></span>
                 </form>
             </div>
@@ -58,33 +91,35 @@
 
             <div class="form-popup" id="myForm2">
                 <form class="form-container" onsubmit="InserData();event.preventDefault()">
-                    <h1>Signup</h1>
-                    
+                    <h1>SIGN UP</h1>
+                    <br />
                     <div class="dropdown">
-                        <label><b>I am siging up as</b></label>
+                        <label><b>Register as</b></label>
                         <select name="sign-as" id="join" class="drop">
                             <option value="volunteer">Volunteer</option>
                             <option value="restaurant">Restaurant</option>
                         </select>
                     </div>
                     <div id="formFields">
-                        <div id="col">
-                            <label for="fname"><b>First Name</b></label>
-                            <input type="text" id="fname" placeholder="Enter First Name" name="fname" required>
+                       <div class="row">
+                        <div class="col">
+                            <!-- <label for="fname"><b>First Name</b></label> -->
+                            <input type="text" id="fname" placeholder="First Name" name="fname" required>
                         </div>
-                        <div id="col">
-                            <label for="lname"><b>Last Name</b></label>
-                            <input type="text" id="lname" placeholder="Enter last Name" name="lname" required>
+                        <div class="col">
+                            <!-- <label for="lname"><b>Last Name</b></label> -->
+                            <input type="text" id="lname" placeholder="Last Name" name="lname" required>
                         </div>
-                        <label for="email"><b>Email</b></label>
-                        <input type="text" id="email" placeholder="Enter Email" name="email" required>
+                       </div>
+                        <!-- <label for="email"><b>Email</b></label> -->
+                        <input type="text" id="email" placeholder="Email Address" name="email" required>
 
-                        <label for="phone"><b>Phone</b></label>
-                        <input type="number" id="phone" placeholder="Enter Phone" name="phone" required>
-                        <label for="psw"><b>Password</b></label>
-                        <input type="password" id="secret" placeholder="Enter Password" name="psw" required>
+                        <!-- <label for="phone"><b>Phone</b></label> -->
+                        <input type="number" id="phone" placeholder="Phone Number" name="phone" required>
+                        <!-- <label for="psw"><b>Password</b></label> -->
+                        <input type="password" id="secret" placeholder="Password" name="psw" required>
                     </div>
-                    <button type="submit" class="btn" id="insert">Signup</button>
+                    <button type="submit" class="btn btn-2" id="insert">SIGN UP</button>
                     <span id="cross" onclick="closeForm()"><a href="">X</a></span>
                 </form>
             </div>
@@ -106,7 +141,9 @@
                     food insecurity in Vancouver. Get started today and start
                     making a difference
                 </p>
-                <button type="button" class="btn-2" onclick="openForm2()" >Join Us Today</button>
+                <div class="join-btn">
+                    <button type="button" class="btn-2" onclick="openForm2()">Join Us Today</button>
+                </div>
               </div>
         </div>
     </section>

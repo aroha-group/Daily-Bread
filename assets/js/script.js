@@ -4,7 +4,7 @@ function menu() {
     if(x[0].style.display==="block")
         {
           x[0].style.display="none";
-          x2.style.display= "none";
+          x2.style.display= "block";
         }
     else{
         x[0].style.display="block";
@@ -52,6 +52,7 @@ function fun2()
 function openForm2() {
   document.getElementById("myForm").style.display = "none";
   document.getElementById("myForm2").style.display = "block";
+  document.getElementsByClassName("nav-btn")[0].style.display = "block";
 }
 
 function closeForm2() {

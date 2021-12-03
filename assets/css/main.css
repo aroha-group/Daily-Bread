@@ -30,13 +30,14 @@
   cursor: pointer;
 }
 .btn-2 {
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
   margin: 10px 0px;
   padding: 15px 20px;
-  font-weight: 600;
   background-color: var(--main-color-1);
-  border: none;
   color: #fff;
-  width:94%
 }
 
 /* The popup form - hidden by default */
@@ -45,7 +46,7 @@
   position: fixed;
   top: 100px;
   box-sizing: border-box;
-right: 30%;
+  right: 30%;
   justify-content: center;
   border: 3px solid whitesmoke;
   z-index: 9;
@@ -55,11 +56,14 @@ right: 30%;
   background-color: white;
 }
 
-#col{
-    width: 47%;
+div.col{
+    width: 50%;
     display: contents;
     margin-right: 2%;
     margin: 5px;
+}
+div.row{
+    width: 100%;
 }
 /* Add styles to the form container */
 .form-container {
@@ -108,25 +112,30 @@ right: 30%;
 }
 /* ============ Header section starts =========== */
 .header {
-  width: 100%;
+  /* width: 100%; */
   height: 100px;
   overflow: hidden;
   display: flex;
+  align-items: center;
+  justify-content: space-around;
   background: #fff;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 .nav-brand {
-  padding-left: 130px;
+
+  /* padding-left: 130px;
     padding-top: 20px;
   text-align: left;
-  width: 30%;
+  width: 30%; */
+    text-align: right;
 }
 .header .nav-brand img {
-  width: 40%;
-  margin: auto;
+    /* width: 70%; */
+    margin: auto;
 }
+
 .header .nav {
-  width: 60%;
+  /* width: 60%; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -142,7 +151,7 @@ right: 30%;
   font-size: 1.2rem;
 }
 .header .nav-btn {
-  width: 20%;
+  /* width: 20%; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -183,7 +192,7 @@ right: 30%;
   margin-top: 15%;
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
-  border-radius: 4px;
+  border-radius: 15px;
   box-shadow: 0px 0px 50px grey;
 }
 .first-section .part-2 .content h2 {
@@ -195,6 +204,7 @@ right: 30%;
   margin: 10px 0 20px;
      line-height: 30px;
     font-size:20px;
+    color: silver;
 }
 /* =============== first-section end =============================== */
 /* =============== listing-section starts ========================= */
@@ -335,7 +345,7 @@ right: 30%;
 }.contain .part-1 .side-nav li {
   padding: 10px;
   text-align: left;
-  font-size: 20px;
+  font-size: 15px;
 }
 .contain .part-1 .side-nav li.active {
   border-left: 4px solid var(--main-color-1);
@@ -367,8 +377,8 @@ right: 30%;
   margin-bottom: -5px;
 }
 .contain .part-2 {
-  padding: 40px;
-  width: 80%;
+  padding: 0px 40px;
+  width: 100%;
 }
 .contain .part-3 {
   width: 20%;
@@ -406,7 +416,7 @@ right: 30%;
   padding-left: 35px;
   margin-bottom: 12px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 15px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -467,6 +477,7 @@ right: 30%;
 }
 #part1{
         display: block;
+        overflow-y: scroll;
     }
 
 .status-pending {
@@ -534,11 +545,17 @@ a {
     display: block;
 }
 .dropdown {
-    padding:15px 0px;
+    padding:0px;
 }
 
 .drop {
-    padding: 10px;
+    /* padding: 10px; */
+    width: 96%;
+    padding: 15px;
+    margin: 5px 5px 22px 0;
+    border: none;
+    outline: auto;
+    background: #f1f1f1;
 }
 .mt-2 {
   margin-top: 20px !important;
@@ -791,4 +808,27 @@ text-align: center;
   border: 1px solid #888;
   width: 80%;
     background-color: gainsboro;
+}
+
+/* Custom Scroll */
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--main-color-1); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--main-color-2); 
 }
