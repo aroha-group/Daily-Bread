@@ -328,9 +328,9 @@ div.row{
   padding: 10px 0;
   border-radius: 15px;
 }
-.contain .part-1 .avtar {
-  /* padding: 50px 10px 10px; */
-}
+/* .contain .part-1 .avtar {
+  padding: 50px 10px 10px;
+} */
 .contain .part-1 .avtar img {
   /* width: 50%; */
   width: 114px;
