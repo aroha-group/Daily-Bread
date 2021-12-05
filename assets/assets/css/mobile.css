@@ -20,7 +20,7 @@
     }
 
     .form-container {
-        margin:23px;
+        margin: 0px;
       }
 
     .nav-brand {
@@ -76,6 +76,7 @@
         position: absolute;
         top: 80px;
         width: 100%;
+        padding: 15px;
         display: none;
         align-items: center;
         justify-content: center;
@@ -89,11 +90,14 @@
       }
       .popup-content {
         background-color: #fefefe;
-        margin: 15% auto; 
+        margin: 15% auto;
         padding: 20px;
+        border-radius: 15px;
         border: 1px solid #888;
-        width: 80%;
-          background-color: gainsboro;
+        opacity: 1;
+        position: fixed;
+        top: 100px;
+        left: 19px;
       }
      
     /* ================= header section end ================= */
@@ -164,7 +168,8 @@
 
     .btn-2 {
         text-align: center;
-
+        width: 100%;
+        font-size: 16px;
     }
 
     /* =============== first-section end =============================== */
@@ -200,7 +205,7 @@
     }
 
     .card img {
-        width: 30%;
+        width: 40%;
         height: 120px;
         float: left;
         padding-right: 4px;
@@ -210,10 +215,11 @@
         font-weight: 700;
         font-size: 18px;
         padding: 10px 10px 10px 30px;
+        margin-left: 31%;
     }
 
     .card .address {
-        width: 90%;
+        /* width: 90%; */
         margin: 5px auto;
     }
 
@@ -225,8 +231,9 @@
     .card .address img {
         width: 15px;
         height: 15px;
-        margin-top: 8px;
-        margin-right: 10px;
+        margin-top: 0px;
+        margin-right: 5px;
+        margin-left: 7px;
         float: left;
     }
 
@@ -241,9 +248,10 @@
     }
 
     .card .packag img {
-        width: 15px;
+        width: 20px;
         height: 15px;
-        margin-right: 10px;
+        margin-top: 0px;
+        margin-right: 5px;
         float: left;
     }
 
@@ -253,7 +261,7 @@
         width: 100%;
         background: #eaf4fa;
         padding-top: 50px;
-        padding-bottom: 50px;
+        padding-bottom: 100px;
     }
 
     .listing-section .contain {
@@ -266,7 +274,8 @@
 
     .contain .part-1 {
         width: 100%;
-        height: 730px;
+        min-height: 90vh;
+        /* height: 730px; */
         margin: 0 1% 0 0;
         border-radius: 8px;
         background: #fff;
@@ -338,22 +347,22 @@
     .contain .part-1 .message h4 {
         margin: 5px 0;
         font-size: 20px;
-        text-align: left;
+        text-align: center;
     }
 
     .contain .part-1 .message p {
         font-size: 16px;
-        text-align: left;
+        text-align: center;
     }
 
     .contain .part-1 .log-out button img {
         width: 10%;
         margin-right: 10px;
-        margin-bottom: -5px;
+        margin-bottom: -2px;
     }
 
     .contain .part-2 {
-        padding: 20px;
+        padding: 0px;
         width: 100%;
     }
 
@@ -525,35 +534,59 @@
         flex-direction: row;
     }
     .popup {
-  display: none; 
-  position: absolute; /* Stay in place */
-  z-index: 1;
-  left: 0%;
-  top: 140%;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-   text-align: center; 
-    border: thin;
-    opacity: inherit;
-}
+    display: none; 
+    position: absolute; /* Stay in place */
+    z-index: 1;
+    left: 0%;
+    top: 140%;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    text-align: center; 
+        border: thin;
+        opacity: inherit;
+    }
 
 
-/* new css */
-.join-btn {
-    display: flex;
-    justify-content: center;
-}
-/* .dropdown{
-    padding: 0px;
-    margin-left: 12px;
-    width: 93%;
-} */
-.drop {
-    width: 90%;
-    padding: 15px;
-    margin: 5px 5px 22px 0;
-    border: none;
-    outline: auto;
-    background: #f1f1f1;
-}
+    /* new css */
+    .join-btn {
+        display: flex;
+        justify-content: center;
+    }
+    /* .dropdown{
+        padding: 0px;
+        margin-left: 12px;
+        width: 93%;
+    } */
+    .drop {
+        width: 90%;
+        padding: 15px;
+        margin: 5px 5px 22px 0;
+        border: none;
+        outline: auto;
+        background: #f1f1f1;
+    }
+    #listing-count{
+        float: right;
+        padding: 7px 20px;
+    }
+
+    .popup-btn {
+        width: 100%;
+    }
+    p.popup-sm-msg {
+        font-size: 14px;
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+
+    .pr-1{
+        padding-right: 10px;
+    }
+
+    .form-camera{
+        margin-left: 0%;
+    }
+    .part-1.map{
+        width: 100%;
+      }
 }

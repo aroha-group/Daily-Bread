@@ -26,7 +26,7 @@
            
         </div>
         <div class="nav-btn">
-            <button type="button" class="btn-1"><a href="UserProfile.html">Profile</a></button>
+            <button type="button" class="btn-1"><a href="UserProfile.html"><i class="far fa-user-alt pr-1"></i>Profile</a></button>
             
         </div>
     </header>
@@ -45,9 +45,9 @@
                     <li><a href="https://linkedin.com"><img src="./assets/images/linkedin.png"></a></li>
                 </ul>
                 <ul class="side-nav">
-                    <li><img src="./assets/images/undraw_cabin_hkfr.svg"><a href="UserProfile.html">Profile</a></li>
-                    <li class="active"><img src="./assets/images/undraw_cabin_hkfr.svg"><a href="listing.html">Listing</a></li>
-                    <li><img src="./assets/images/undraw_cabin_hkfr.svg"><a href="history.html">Requests</a></li>
+                    <a href="UserProfile.html"><li><i class="far fa-user-alt pr-2"></i>Profile</li></a>
+                    <a href="listing.html"><li class="active"><i class="fas fa-home pr-2"></i>Listing</li></a>
+                    <a href="history.html"><li><i class="fal fa-th-list pr-2"></i>Requests</li></a>
                 </ul>
 				
  <div id="create_listing_btn" class="message">
@@ -59,13 +59,14 @@
                     <a href="/assets/donate.html"><button class="btn-2">Donate</button></a>
                 </div>
                 <div class="log-out">
-                    <button class="btn-1" id="logout"><img src="./assets/images/sign-out-alt-solid.svg">Logout</button>
+                    <button class="btn-1" id="logout"><img src="./assets/images/sign-out-alt-solid.svg">LOGOUT</button>
                 </div>
             </div>
 
             <div class="part-2" id="part2">
                 <div class="lable">
-                    <h3>Active Listings <span id="listing-count">0 listings found</span></h3>
+                    <h3>Active Listings </h3>
+                    <span id="listing-count">0 listings found</span>
                 </div>
 
             </div>
@@ -108,10 +109,10 @@
             <i class="fas fa-home" onclick="location.href = './home.html';"></i>
         </div>
         <div class="f2">
-            <i class="fal fa-th-list" onclick="fun2()"></i>
+            <i class="fal fa-th-list" onclick="location.href = './listing.html';"></i>
         </div>
         <div class="f3">
-            <i class="far fa-user-alt" onclick="fun()"></i>
+            <i class="far fa-user-alt" onclick="location.href = './UserProfile.html';"></i>
         </div>
     </div>
 </body>

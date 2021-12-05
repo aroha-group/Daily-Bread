@@ -15,7 +15,7 @@
 <body>
     <header class="header">
         <div class="icon">
-            <i class="fas fa-chevron-left"></i>
+            <i class="fas fa-chevron-left" onclick="fun()"></i>
         </div>
         <div class="nav-brand">
             <a href="home.html"><img src="./assets/images/logo%20(1).png" />
@@ -25,7 +25,7 @@
            
         </div>
         <div class="nav-btn">
-            <button type="button" class="btn-1">Profile</button>
+            <button type="button" class="btn-1"><a href="UserProfile.html"><i class="far fa-user-alt pr-1"></i>Profile</a></button>
 
         </div>
     </header>
@@ -44,9 +44,9 @@
                     <li><a href="https://linkedin.com"><img src="./assets/images/linkedin.png"></a></li>
                 </ul>
                 <ul class="side-nav">
-                     <li class="active"><img src="./assets/images/undraw_cabin_hkfr.svg"><a href="UserProfile.html">Profile</a></li>
-                    <li><img src="./assets/images/undraw_cabin_hkfr.svg"><a href="listing.html">listing</a></li>
-                    <li><img src="./assets/images/undraw_cabin_hkfr.svg"><a href="history.html">History</a></li>
+                     <li class="active"><i class="far fa-user-alt pr-2"></i><a href="UserProfile.html">Profile</a></li>
+                    <li><i class="fas fa-home pr-2"></i><a href="listing.html">listing</a></li>
+                    <li><i class="fal fa-th-list pr-2"></i><a href="history.html">History</a></li>
                 </ul>
                 <div id="create_listing_btn" class="message">
                     <a href="/assets/AddFood.html"><button class="btn-2">Create New Listing</button></a>
@@ -58,7 +58,7 @@
                 </div>
  														
                 <div class="log-out">
-                    <button class="btn-1" id="logout"><img src="./assets/images/sign-out-alt-solid.svg">Logout</button>
+                    <button class="btn-1" id="logout"><img src="./assets/images/sign-out-alt-solid.svg">LOGOUT</button>
                 </div>
             </div>
 
@@ -70,10 +70,8 @@
                 </div>
                 <form onsubmit="event.preventDefault()" class="form-container">
                     <h4>Food Information</h4>
-                    <label for="amount"><b>No of packages</b></label>
-                    <input type="number" placeholder=" Enter no of Packages" id="amount" name="amount" required>
-                    <label for="foodName"><b>Food Name</b></label>
-                    <input type="text" placeholder="Enter Food Name" id="foodName" name="foodName" required>
+                    <input type="number" placeholder="No. of Packages" id="amount" name="amount" required>
+                    <input type="text" placeholder="Food Name" id="foodName" name="foodName" required>
 
                     <div class="dropdown">
 
@@ -86,11 +84,9 @@
                     </div>
 
                     <h4>Contact Information</h4>
-                    <label for="phone"><b>Phone</b></label>
-                    <input type="number" placeholder="Enter Phone" id="phone" name="phone" required>
+                    <input type="number" placeholder="Phone" id="phone" name="phone" required>
 
-                    <label for="address"><b>Address</b></label>
-                    <input type="text" placeholder="Enter Address" name="address" id="address" required>
+                    <input type="text" placeholder="Address" name="address" id="address" required>
 
                     <button type="submit" class="btn" id="food-btn">Create Listing</button>
                 </form>
@@ -132,15 +128,15 @@
             </div>
         </div>
     </section>
- <div class="mobile-footer">
+    <div class="mobile-footer">
         <div class="f1">
-            <i class="fas fa-home"></i>
+            <i class="fas fa-home" onclick="location.href = './home.html';"></i>
         </div>
         <div class="f2">
-            <i class="fal fa-th-list" onclick="fun2()"></i>
+            <i class="fal fa-th-list" onclick="location.href = './listing.html';"></i>
         </div>
         <div class="f3">
-            <i class="far fa-user-alt" onclick="fun()"></i>
+            <i class="far fa-user-alt" onclick="location.href = './UserProfile.html';"></i>
         </div>
     </div>
     <script src="assets/js/script.js"></script>

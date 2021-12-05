@@ -8,7 +8,10 @@ function menu() {
         }
     else{
         x[0].style.display="block";
-          x2.style.display= "none";
+        if(x2)
+        {
+          x2.style.display="none";
+        }
     }
     
 }

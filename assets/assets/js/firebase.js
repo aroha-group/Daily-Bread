@@ -87,7 +87,7 @@ function InserData() {
   } else {
     id = UserData.email.split(".").join();
   }
-
+  checkInternetConnection();
   set(ref(db, formData.type + "/" + id + "," + formData.type), {
     ...formData,
   })
@@ -99,6 +99,7 @@ function InserData() {
     .catch((err) => alert("error" + err));
 
   if (checkView.value != "volunteer") {
+    checkInternetConnection();
     set(ref(db, "restaurant" + "/" + id + "," + "restaurant"), {
       ...UserData,
     })
@@ -115,7 +116,7 @@ function SelectData() {
   const type = document.querySelector("#join2").value;
   const id = email.split(".").join();
   const dbref = ref(db);
-
+  checkInternetConnection();
   get(child(dbref, type + "/" + id + "," + type)).then((snapshot) => {
     if (snapshot.exists()) {
       if (password == snapshot.val().password) {
@@ -177,7 +178,7 @@ async function UpdateData() {
   const toSession = await JSON.stringify(userData);
 
   sessionStorage.setItem("userData", toSession);
-
+  checkInternetConnection();
   update(ref(db, userData.type + "/" + id + "," + userData.type), {
     ...userData,
   })
@@ -192,6 +193,7 @@ window.UpdateData = UpdateData;
 
 function GetAllListing() {
   const dbref = ref(db);
+  checkInternetConnection();
   get(child(dbref, "food")).then((snapshot) => {
     if (snapshot.exists()) {
       const listData = snapshot.val();
@@ -215,8 +217,8 @@ function GetAllListing() {
                                   <span>${listData[property].address}</span>
                               </div>
                               <div class="packag">
-                                  <img src="./assets/images/map-marker-alt-solid.svg">
-                                  <span>${listData[property].amount}</span>
+                                  <img src="./assets/images/cutlery.png">
+                                  <span>${listData[property].amount} Food Packages</span>
                               </div>
                           </div>`;
 
@@ -236,9 +238,19 @@ function GetAllListing() {
     }
   });
 }
+function checkInternetConnection() {
+  if (!navigator.onLine) {
+    alert("Internet Not Connected");
+    // document.querySelector("#no-internet").style.display = "block";
+  } else {
+    // document.querySelector("#no-internet").style.display = "none";
+    // alert("Internet Connected");
+  }
+}
 
 function GetReqListing() {
   const dbref = ref(db);
+  checkInternetConnection();
   get(child(dbref, "food-requests")).then((snapshot) => {
     if (snapshot.exists()) {
       const listData = snapshot.val();
@@ -252,7 +264,7 @@ function GetReqListing() {
                                   <div class="address">
                                       <span>${listData[property].address} BC ${
           listData[property].packages
-        } packages</span>
+        } Packages</span>
                                   </div>
                                   <p class=${
                                     listData[property].status == 0
@@ -279,49 +291,38 @@ function DynmicForm() {
   let checkView = document.querySelector("#join");
   if (checkView.value == "volunteer") {
     signupView.innerHTML = `<div id="col">
-                                  <label for="fname"><b>First Name</b></label>
-                                  <input type="text" id="fname" placeholder="Enter First Name" name="fname" required>
+                                  <input type="text" id="fname" placeholder="First Name" name="fname" required>
                               </div>
                               <div id="col">
-                                  <label for="lname"><b>Last Name</b></label>
-                                  <input type="text" id="lname" placeholder="Enter last Name" name="lname" required>
+                                  <input type="text" id="lname" placeholder="Last Name" name="lname" required>
                               </div>
-                              <label for="email"><b>Email</b></label>
-                              <input type="text" id="email" placeholder="Enter Email" name="email" required>
+                              <input type="text" id="email" placeholder="Email" name="email" required>
 
-                              <label for="phone"><b>Phone</b></label>
-                              <input type="number" id="phone" placeholder="Enter Phone" name="phone" required>
-                              <label for="psw"><b>Password</b></label>
-                              <input type="password" id="secret" placeholder="Enter Password" name="psw" required>
+                              <input type="number" id="phone" placeholder="Phone" name="phone" required>
+                              <input type="password" id="secret" placeholder="Password" name="psw" required>
                               `;
   } else {
-    signupView.innerHTML = `<label for="name"><b>Restaurant Name</b></label>
-                              <input type="text" id="name" placeholder="Enter Name" name="name" required>
-                              <label for="phoneNumber"><b>Phone Number</b></label>
-                              <input type="number" id="phoneNumber" placeholder="Enter Phone Number" name="phoneNumber" required>
-                              <label for="address"><b>Address</b></label>
-                              <input type="text" id="address" placeholder="Enter Address" name="address" required>
+    signupView.innerHTML = `<input type="text" id="name" placeholder="Restaurant Name" name="name" required>
+                             
+                              <input type="number" id="phoneNumber" placeholder="Phone" name="phoneNumber" required>
+                              <input type="text" id="address" placeholder="Address" name="address" required>
                               <label for="timing"><b>Closing Time</b></label>
                               <input type="time" id="timing" name="timing" required>
+                              <div class="dropdown">
                               <label for="foodType"><b>Food Type</b></label>
                               <select name="sign-as" id="foodType" class="drop">
                                   <option value="one">Veg</option>
                                   <option value="two">Non Veg</option>
                                   <option value="three">Vegan</option>
                               </select>
+                              </div>
                               <h3 id="sign_up_heading">Your Information</h3>
-                              <label for="fname"><b>First Name</b></label>
-                              <input type="text" id="fname" placeholder="Enter First Name" name="fname" required>
-                              <label for="lname"><b>Last Name</b></label>
-                              <input type="text" id="lname" placeholder="Enter Last Name" name="lname" required>
-                              <label for="email"><b>Email</b></label>
-                              <input type="text" id="email" placeholder="Enter Email" name="email" required>
-                              <label for="position"><b>Position</b></label>
+                              <input type="text" id="fname" placeholder="First Name" name="fname" required>
+                              <input type="text" id="lname" placeholder="Last Name" name="lname" required>
+                              <input type="text" id="email" placeholder="Email" name="email" required>
                               <input type="text" id="position" placeholder="Position" name="position" required>
-                              <label for="password"><b>Password</b></label>
-                              <input type="password" id="password" placeholder="Enter Password" name="password" required>
-                              <label for="confirmPassword"><b>Confirm Password</b></label>
-                              <input type="password" id="confirmPassword" placeholder="Reenter Password" name="confirmPassword" required>`;
+                              <input type="password" id="password" placeholder="Password" name="password" required>
+                              <input type="password" id="confirmPassword" placeholder="Confirm Password" name="confirmPassword" required>`;
   }
 }
 
@@ -353,7 +354,7 @@ function InserReq() {
   const uniqueId = Math.floor(Math.random() * 90000) + 10000;
 
   const id = reqData.email.split(".").join();
-
+  checkInternetConnection();
   set(ref(db, "food-requests" + "/" + id + "," + uniqueId + "," + type), {
     ...reqData,
   })
@@ -381,7 +382,7 @@ function AddFood() {
   reqData.uniqueId = uniqueId;
 
   // const id = reqData.email.split(".").join();
-
+  checkInternetConnection();
   set(ref(db, "food" + "/" + uniqueId), {
     ...reqData,
   })
@@ -536,13 +537,14 @@ function AddFood() {
       const urlParams = new URLSearchParams(queryString);
       const product = urlParams.get("id");
       const dbref = ref(db);
+      checkInternetConnection();
       get(child(dbref, "food" + "/" + product)).then((snapshot) => {
         if (snapshot.exists()) {
           let item = snapshot.val();
           document.querySelector("#rest_name").textContent = item.foodName;
           document.querySelector(
             "#pack_count"
-          ).textContent = `${item.amount} Packages`;
+          ).textContent = `${item.amount} Food Packages`;
           let sass = JSON.stringify(item);
           sessionStorage.setItem("foodItem", sass);
         } else {
